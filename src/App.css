@@ -1,0 +1,16 @@
+body {
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+button {
+    width: 100px;
+    height: 50px;
+    margin: 20px 30px;
+}
+.container {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+}
