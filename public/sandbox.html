@@ -4,34 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+        .bubble {
+            position: relative;
+            background: #a1A1a1;
+            border-radius: 10px;
+            padding: 10px 15px;
+            max-width: 300px;
+            display: inline-block;
+            }
+
+            /* 吹き出しの三角部分 */
+        .bubble::after {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #a1a1a1 transparent transparent;
+        }
+
+    </style>
 </head>
 <body>
-    <script>
-        const members = [
-            {
-                id: 1,
-                name: "tarou",
-                age: "20",
-            },
-            {
-                id: 2,
-                name: "hanako",
-                age: "25",
-            },
-            {
-                id: 3,
-                name: "ichirou",
-                age: "23",
-            },
-        ]
-        // console.log(lists)
-        members.forEach(member => {
-            const {id, name, age} = member
-            console.log("分割代入の練習中")
-            console.log(id)
-            console.log(name)
-            console.log(age)
-        });
-    </script>
+    <div class="container">
+        <div class="bubble">こんにちは！</div>
+    </div>
 </body>
 </html>

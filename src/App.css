@@ -1,7 +1,7 @@
 body {
     font-size: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
+    margin: 20px 30px;
 }
 button {
     width: 100px;
@@ -13,4 +13,7 @@ button {
     margin: auto;
     justify-content: center;
     flex-direction: column;
+}
+.under-bar {
+    border-bottom: 1px solid #222;
 }
