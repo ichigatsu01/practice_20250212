@@ -1,33 +1,25 @@
 import React from 'react'
-import '../css/ChatbotInput.css'
 
-const ChatbotInput = ({setSelectedNumber}) => {
-    const inputLists = {
-            1: "八百屋では何を取り扱っていますか？",
-            2: "商店街の今週の特売はなんですか？",
-            3: "駐車場はありますか？",
-            4: "近くの観光スポットを教えてください。",
-        };
-    
-    const onClickBtn = (key) => {
-        console.log(`ボタンが押されました：${key}`);
-        setSelectedNumber(key)
-    };
-
-  return (
-    <>
-        <div className='input-group chat-input'>
-            {Object.entries(inputLists).map(([key, value]) => {
-                return (
-                <button key={key} className='chat-btn'
-                    // onClick={() => setSelectedNumber=(key)}>
-                    onClick={() => onClickBtn(key)}>
-                    {key}：{value}
+const ChatbotInput = ({inputLists, setSelectedQuestion}) => {
+    const onClickBtn = (btnId) => {
+        // console.log(`ボタンが押されました：${btnId}`);
+        const getList = inputLists.find((list) => {
+            return list.id === btnId
+        })
+        console.log(`getListの内容：${getList.id}, ${getList.question}, ${getList.answer}`);
+        setSelectedQuestion(getList);
+    }
+    return (
+        <div className='container'>
+        {inputLists.map((list) => {
+            const {id, question} = list
+            return(
+                <button key={id} onClick={() => onClickBtn(id)}>
+                    {id+1} : {question}
                 </button>
-            );
-            })}
-        </div>
-    </>
+            )
+        })}
+    </div>
   )
 }
 

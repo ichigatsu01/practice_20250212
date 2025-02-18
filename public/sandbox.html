@@ -5,37 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container {
-            display: flex;
-            justify-content: center;
+        body {
+            background-color: blanchedalmond;
         }
-        .bubble {
+        .container {
+            margin: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        /* by chatGPT */
+        .message-box {
             position: relative;
-            background: #a1A1a1;
-            border-radius: 10px;
+            background: red;
             padding: 10px 15px;
-            max-width: 300px;
-            display: inline-block;
+            border-radius: 10px;
+            width: fit-content;
+            max-width: 80%;
+            font-size: 14px;
             }
-
-            /* 吹き出しの三角部分 */
-        .bubble::after {
+        .message-box::after {
             content: "";
             position: absolute;
-            left: -10px;
-            top: 10px;
-            width: 0;
-            height: 0;
+            bottom: -20px; /* メッセージボックスの下に配置 */
+            left: 20px; /* 左寄せで調整 */
+            border-width: 10px;
             border-style: solid;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent #a1a1a1 transparent transparent;
+            border-color: red transparent transparent transparent;
+            }
+
+        /* 自力での調整 */
+        .msgbox {
+            position: relative;
+            background: lightgreen;
+            padding: 10px 30px;
+            margin: 20px;
+            border-radius: 10px;
+            width: fit-content;
+            max-width: 80%;
+            font-size: 14px;
+            }
+        .msgbox::after {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent red transparent transparent;
         }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="bubble">こんにちは！</div>
+    <div>
+        <p class="message-box">^^b</p>
+        <p class="msgbox">d=^o^=b <br>d=^o^=b <br>d=^o^=b <br></p>
     </div>
+    <div class="container">
+        <button>a</button>
+        <button>b</button>
+        <button>c</button>
+        <button>d</button>
+    </div>
+    <script>
+
+        const inputLists = [
+            {
+                id: 0,
+                question: "八百屋では何を取り扱っていますか？",
+                answer: "新鮮な野菜と果物の他、自家製の糠漬けもありますよ！",
+            },
+            {
+                id: 1,
+                question: "商店街の今週の特売はなんですか？",
+                answer: "水曜日に文具店でノートが割引、また金曜日に精肉店で牛肉の特売があります！",
+            },
+            {
+                id: 2,
+                question: "駐車場はありますか？",
+                answer: "商店街南口にあります。商店街でお買い物いただいた際に駐車券をご提示いただくと割引があります。",
+            },
+            {
+                id: 3,
+                question: "近くの観光スポットを教えてください。",
+                answer: "商店街北口から徒歩10分のところに〇〇城公園があります。お食事の後の散歩に是非どうぞ！",
+            },
+        ];
+        const findFunc = inputLists.find((list) => list.id === 3);
+        // console.log(findFunc.question);
+    </script>
 </body>
 </html>

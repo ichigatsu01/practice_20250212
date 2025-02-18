@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+/* ChatbotRoom */
+#room {
+    width: 100%;
+    min-height: 100vh;
+    overflow: scroll;
+    background-color: rgb(113, 147, 193);
+}
+#room ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.message-bot, .message-user {
+    padding: 30px;
+    max-width: 40%;
+    margin: 10px 20px;
+    border-radius: 30px;
+}
+.message-bot {
+    background-color: white;
+    align-self: flex-start;
+}
+.message-user {
+    background-color: lightgreen;
+    align-self: flex-end;
+}
+
+
+/* ChatbotInput */
+button {
+    width: auto;
+    height: 2rem;
+}
+.container {
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr 1fr;
+}
